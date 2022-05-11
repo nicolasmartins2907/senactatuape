@@ -1,0 +1,45 @@
+Tomada
+Neutro e Fase 121,6
+Fase e terra 122,5
+Terra e neutro 0,03
+
+Continuidade cabo de força
+Fase 00
+Neutro 00
+Terra 00
+
+Resistência do cabo de força
+Fase 0,02
+Neutro 0,02
+Terra 0,02
+
+Tensões elétricas no cabo
+Fase e netruo 121,3
+Fase e terra 122,5
+Terra e neutro 0,04
+
+Teste de fonte
+-12v- 12.0
++12v2 - 12.1
+5vsb - 5.0
+Pg - 310ms
++5v - 5.0
++12v1 - 12.2
++3.3v - 3.2 mm
+
+Tensão protoboard
+
+5v + 0v 5.08v
+12v + ,v 12,06
+12v + 5v 6.96v
+
+Va volt ampere U tensão 11.88
+I corrente 0.26
+U x I = VA
+U X I 3.1w
+
+Resistor 325
+Led. 0.29A
+U x I 3.4A
+
+41.4W total 4 fontes com 3 coolers e 4 leds
