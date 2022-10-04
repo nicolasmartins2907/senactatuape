@@ -1,0 +1,55 @@
+Router>ena
+
+Router#conf t
+Router(config)#hostname SP
+SP(config)#int f0/0
+SP(config-if)#desc Porta LAn de SP
+SP(config-if)#ip add 192.168.1.1 255.255.255.0
+SP(config-if)#no shut
+SP(config-if)#exit
+SP(config)#int s0/0
+SP(config-if)#desc PORTA WAN que LIGA SP ao RJ
+SP(config-if)#ip add 200.100.10.1 255.255.255.0
+SP(config-if)#no shut
+SP(config-if)#clock rate 128000
+SP(config-if)#band 128
+SP(config-if)#exit
+SP(config)#router rip
+SP(config-router)#net 192.168.1.0
+SP(config-router)#net 200.100.10.0
+SP(config-router)# "Ctrl+Z"
+SP#sh run
+SP#copy run star
+
+
+.....
+
+
+SP#reload
+
+.....
+
+
+SP(config)# line con 0
+SP(config-line)#password SENHA
+SP(config-line)#login
+.....
+SP(config)# enable secret SENHA
+SP(config)# enable password SENHA
+....
+
+sh cdp neig 
+sh ip rout
+
+...
+
+Rota Estatica (FIXA)
+
+Router(config)# ip route (network) (Mask) (interface)
+Router(config)# ip route 192.168.0.0 255.255.255.0 serial 0/0
+
+
+Router(config)# ip route (Network) (Mask) (next hop \ ip do router seguinte)
+Router(config)# ip route 192.168.0.0 255.255.255.0 200.200.200.2
+ 
+....
