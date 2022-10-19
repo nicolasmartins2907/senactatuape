@@ -1,0 +1,54 @@
+Switch
+
+Modo EXEC privilegios 
+enable
+
+!Modo configuraçao Global
+configure terminal
+
+!configuraçao das line VTY (linhas VIrtuais)
+line VTY 0 4
+
+!Habilitar o login local
+login local
+
+!Sincronismo dos logs
+logging synchronous 
+
+!Habilitar tempo de inatividade
+exec-timeout 5 30
+
+!Habilitar o protocolo de acesso
+transporte input ssh
+
+!Sair de todos os modos
+
+!Salvar as configuraçoes
+copy running-config startup-config
+Write
+!Modo de configurançao Global
+
+Router
+
+configure terminal
+
+!Configraçao do Dominio
+ip domain-name cisco.com
+
+!Criar a chave publica/privada fo SSH
+crypto key generate rsa general-keys modulus 1024
+
+!habilitar a versao 2 do SSH 
+ip ssh version 2 
+ 
+ !habilitar tempo de inatividade
+ ip ssh time-out 60  
+
+ !Configurar o numero maximo  de conexões
+ip ssh authentication-retries 2 
+
+!Salvar sem sair do modo root
+do write
+
+!Desativar a resolução de nomes de domínio
+no ip domain-lookup
