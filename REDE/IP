@@ -1,0 +1,61 @@
+
+ip classes A,B,C,D,E              R = REDE
+                                  H = HOST                                   
+A-  1-126
+ex: 1.x.x.x a 126.x.x.x
+    R.H.H.H      R.H.H.H
+
+B-  128-191
+ex: 128.x.x.x a 191.x.x.x
+      R.R.H.H     R.R.H.H
+
+C-  192-223
+ex: 192.x.x.x a 223.x.x.x
+      R.R.R.H     R.R.R.H
+
+D- 224-239
+MULTICAST
+
+E- 240-255
+EXPERIMENTAL
+
+1° Etapa
+
+10.26.40.12/8      200.100.10.2/24
+255.0.0.0          255.255.255.0
+
+130.44.55.6/16     180.254.255.254/16
+255.255.0.0        255.255.0.0
+ 
+90.0.0.2/8         222.22.2.2/24
+255.0.0.0          255.255.255.0
+
+
+2° Etapa
+
+
+validos
+10.26.40.0/8        255.0.0.0
+22.255.0.255/8      255.0.0.0
+148.0.0.1/16        255.255.0.0
+
+
+Nao Validos         Mascara            Porque Nao Pode
+
+10.0.0.0/8          255.0.0.0          Rede
+192.168.0.255/24    255 255.255.255.0  Broadcast
+127.0.0.1                              Loopback
+130.5.255.255/16    255.255.0.0        Broadcast 
+24.255.255.255/8    255.0.0.0          Broadcast
+
+
+Porque são ip de rede ou broadcast
+127 e para Loopback 
+
+EX: Quando todos os Host é 0 é Rede e Quando todos os Host termina com 255 é Broadcast
+EX: 10.0.0.0         REDE
+EX: 10.255.255.255   BROADCAST
+EX: 128.0.0.0        REDE
+EX: 128.0.255.255    BROADCAST
+EX: 192.0.0.0        REDE
+EX: 192.0.0.255      BROADCAST
